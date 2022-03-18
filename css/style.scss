@@ -1,5 +1,6 @@
 @import "variables";
 @import "generals";
+@import "bg-animation-effect";
 
 /* ----------------------
 About Section
@@ -49,6 +50,21 @@ About Section
       }
       h2 {
         margin: 1.25rem 0 0.3125rem;
+        text-transform: capitalize;
+        font-size: 1.25rem;
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .skill-item {
+          background-color: $dark-light;
+          margin: 0.25rem 0.125rem;
+          padding: 0.25rem 0.625rem;
+          border-radius: 0.25rem;
+          font-size: 1rem;
+          text-transform: capitalize;
+        }
       }
     }
   }
