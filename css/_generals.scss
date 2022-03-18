@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style-type: none;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  color: $white-light;
+  background-color: $dark;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $white;
+  font-weight: 600;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: $dark;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $main-color;
+}

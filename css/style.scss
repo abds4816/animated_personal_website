@@ -1,0 +1,55 @@
+@import "variables";
+@import "generals";
+
+/* ----------------------
+About Section
+---------------------- */
+.about-section {
+  .min-vh-100 {
+    padding: 7.5rem 1rem;
+    .about-content {
+      max-width: 38.75rem;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      img {
+        max-width: 9.375rem;
+        border: 5px solid $dark-light;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        span {
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+        a {
+          color: $main-color;
+          text-transform: capitalize;
+          font-weight: 600;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 0;
+            left: 0;
+            bottom: 0;
+            background-color: $main-color;
+            transition: 0.3s ease;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+      h2 {
+        margin: 1.25rem 0 0.3125rem;
+      }
+    }
+  }
+}
