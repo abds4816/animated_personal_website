@@ -97,10 +97,40 @@ Portfolio Section
       }
     }
   }
+  .filter-status {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $dark-light;
+    z-index: 250;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    gap: 0.25rem;
+    text-transform: capitalize;
+    transition: all 0.3s ease 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    span {
+      font-weight: 600;
+      color: $white;
+    }
+  }
   .portfolio-items {
     .portfolio-item {
       width: calc((100% / 3) - 2rem);
       margin: 0 1rem 2rem;
+      display: none;
+      &.show {
+        display: block;
+      }
       &:hover {
         .portfolio-item-thumbnail::before,
         .portfolio-item-thumbnail::after {
@@ -147,6 +177,103 @@ Portfolio Section
       }
       &-details {
         display: none;
+      }
+    }
+  }
+}
+
+/* ----------------------
+Portfolio Popup
+---------------------- */
+.portfolio-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: calc(100% + 5px);
+  height: 100%;
+  z-index: 200;
+  overflow: hidden;
+  visibility: hidden;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background-color: $dark-light;
+    z-index: -1;
+  }
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+  .popup-inner {
+    height: 100vh;
+    padding: 0 0.975rem;
+    overflow-y: auto;
+    .popup-content {
+      max-width: 70%;
+      margin: 3.125rem auto 3.75rem;
+      .popup-header {
+        position: relative;
+        .popup-counter {
+          font-size: 1.25rem;
+          text-transform: capitalize;
+          margin-bottom: 0.625rem;
+          padding-right: 3.125rem;
+          span {
+            font-weight: 300;
+          }
+        }
+        .popup-close-btn {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .popup-thumbnail {
+          padding: 1.25rem 0;
+        }
+        h3 {
+          font-size: 1.75rem;
+          text-transform: capitalize;
+        }
+      }
+      .popup-body {
+        padding: 0.9375rem 0;
+        .description {
+          margin-bottom: 1.875rem;
+        }
+        .general-info {
+          p {
+            margin-bottom: 0.625rem;
+            font-weight: 600;
+            span {
+              font-weight: 300;
+              margin-left: 0.3125rem;
+            }
+          }
+        }
+      }
+      .popup-footer {
+        padding-top: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &-right {
+          text-align: end;
+        }
+        h3 {
+          text-transform: capitalize;
+          font-size: 1.25rem;
+          margin: 1.875rem 0 0.9625rem;
+        }
+        img {
+          max-width: 7.5rem;
+        }
       }
     }
   }

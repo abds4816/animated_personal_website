@@ -14,6 +14,9 @@ body {
   color: $white-light;
   background-color: $dark;
   overflow-x: hidden;
+  &.hide-scrolling {
+    overflow-y: hidden;
+  }
 }
 
 h1,
@@ -78,6 +81,36 @@ img {
     transform: translate(0.25rem, 0.25rem);
     pointer-events: none;
     transition: all 0.3s ease;
+  }
+}
+.close-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: $dark;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  &:hover::before,
+  &:hover::after {
+    transform: translate(-50%, -50%);
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 1.25rem;
+    height: 0.125rem;
+    background-color: $white-light;
+    top: 50%;
+    left: 50%;
+    transition: transform 0.3s ease;
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 }
 
