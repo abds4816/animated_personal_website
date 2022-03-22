@@ -194,14 +194,28 @@ Portfolio Popup
   z-index: 200;
   overflow: hidden;
   visibility: hidden;
+  &.open {
+    visibility: visible;
+    &::before,
+    &::after {
+      width: 100%;
+      transition-delay: 0s;
+    }
+    .popup-inner {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.5s;
+    }
+  }
   &::before,
   &::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 0;
     height: 50%;
     background-color: $dark-light;
     z-index: -1;
+    transition: all 0.5s ease 0.5s;
   }
   &::before {
     top: 0;
@@ -211,10 +225,65 @@ Portfolio Popup
     bottom: 0;
     right: 0;
   }
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    visibility: hidden;
+    &.prev,
+    &.next {
+      visibility: visible;
+    }
+    &.next::before {
+      animation: nextItem 1s ease forwards;
+    }
+    @keyframes nextItem {
+      0% {
+        transform: translateX(-100%);
+      }
+      40%,
+      60% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    &.prev::before {
+      animation: prevItem 1s ease forwards;
+    }
+    @keyframes prevItem {
+      0% {
+        transform: translateX(100%);
+      }
+      40%,
+      60% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $dark;
+    }
+  }
   .popup-inner {
     height: 100vh;
     padding: 0 0.975rem;
     overflow-y: auto;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateY(20%);
     .popup-content {
       max-width: 70%;
       margin: 3.125rem auto 3.75rem;
