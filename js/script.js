@@ -72,7 +72,7 @@ document.querySelector('.popup-close-btn').addEventListener("click", togglePopup
 
 function portfolioItemDetails(){
     document.querySelector('.popup-thumbnail').src = portfolioItems[portfolioItemIndex].querySelector('img').src;
-
+    
     document.querySelector('.popup-header h3').innerHTML = portfolioItems[portfolioItemIndex].querySelector('.portfolio-item-title').innerHTML;
 
     document.querySelector('.popup-body').innerHTML = portfolioItems[portfolioItemIndex].querySelector('.portfolio-item-details').innerHTML;
@@ -83,9 +83,9 @@ function portfolioItemDetails(){
 function updateNextPrevItem() {
     if(portfolioItemIndex !== 0){
         document.querySelector('.popup-footer-left').classList.remove('hidden');
-
+        
         document.querySelector('.popup-footer-left h3').innerHTML = portfolioItems[portfolioItemIndex-1].querySelector("h3").innerHTML;
-
+        
         document.querySelector('.popup-footer-left img').src = portfolioItems[portfolioItemIndex-1].querySelector("img").src;
     }else{
         document.querySelector('.popup-footer-left').classList.add('hidden');
@@ -93,9 +93,9 @@ function updateNextPrevItem() {
     
     if(portfolioItemIndex !== portfolioItems.length-1){
         document.querySelector('.popup-footer-right').classList.remove('hidden');
-
+        
         document.querySelector('.popup-footer-right h3').innerHTML = portfolioItems[portfolioItemIndex+1].querySelector("h3").innerHTML;
-    
+        
         document.querySelector('.popup-footer-right img').src = portfolioItems[portfolioItemIndex+1].querySelector("img").src;
         
     }else{
@@ -126,3 +126,11 @@ function changePortfolioItem(direction){
         document.querySelector('.popup-overlay').classList.remove(direction);
     }, 1000);
 }
+
+/* ------------ Toggle Contact Form ------------ */ 
+document.addEventListener("click", (e) =>{
+    if(e.target.classList.contains('toggle-contact-form-btn')){
+        document.querySelector('.contact-form').classList.toggle('open');
+        toggleBodyScrolling();
+    }
+})

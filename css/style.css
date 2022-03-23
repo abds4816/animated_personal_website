@@ -448,6 +448,170 @@ Portfolio Section
 }
 
 /* ----------------------
+Contact Section
+---------------------- */
+.contact-section.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-section .contact-content {
+  max-width: 44rem;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-section .contact-content .contact-text {
+  margin-bottom: 1.875rem;
+}
+
+.contact-section .contact-content .contact-info-item {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+.contact-section .contact-content .contact-info-item.social-links span {
+  margin-right: 0.25rem;
+}
+
+.contact-section .contact-content .contact-info-item.social-links a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #c8c8c8;
+  font-size: 1rem;
+  margin: 0 0.25rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #c8c8c8;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contact-section .contact-content .contact-info-item.social-links a:hover {
+  color: #e98b2c;
+  border-color: #e98b2c;
+}
+
+.contact-section .contact-content .toggle-contact-form-btn {
+  margin-top: 1.875rem;
+}
+
+.contact-section .contact-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  visibility: hidden;
+}
+
+.contact-section .contact-form.open {
+  visibility: visible;
+}
+
+.contact-section .contact-form.open .contact-form-inner {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  overflow-y: auto;
+}
+
+.contact-section .contact-form.open .contact-form-inner .contact-form-container {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.contact-section .contact-form-inner {
+  background-color: #32323a;
+  height: 100vh;
+  padding: 3.125rem 0.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.5s ease 0.5s;
+  transition: all 0.5s ease 0.5s;
+}
+
+.contact-section .contact-form-inner .contact-form-container {
+  max-width: 37.5rem;
+  margin: auto;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.contact-section .contact-form-inner .contact-form-container form {
+  margin-top: 3.125rem;
+}
+
+.contact-section .contact-form-inner .contact-form-container form .input-group {
+  margin-bottom: 1.875rem;
+  width: 100%;
+}
+
+.contact-section .contact-form-inner .contact-form-container form .input-group .input-control {
+  display: block;
+  width: 100%;
+  height: 3.125rem;
+  padding: 0 0.9375rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.contact-section .contact-form-inner .contact-form-container form .input-group .input-control::-webkit-input-placeholder {
+  color: #c8c8c8;
+}
+
+.contact-section .contact-form-inner .contact-form-container form .input-group .input-control:-ms-input-placeholder {
+  color: #c8c8c8;
+}
+
+.contact-section .contact-form-inner .contact-form-container form .input-group .input-control::-ms-input-placeholder {
+  color: #c8c8c8;
+}
+
+.contact-section .contact-form-inner .contact-form-container form .input-group .input-control::placeholder {
+  color: #c8c8c8;
+}
+
+.contact-section .contact-form-inner .contact-form-container form .input-group .input-control:focus {
+  background-color: #1b1b22;
+  border-bottom: none;
+}
+
+.contact-section .contact-form-inner .contact-form-container form .input-group textarea.input-control {
+  resize: none;
+  height: 7.5rem;
+  padding-top: 0.9375rem;
+}
+
+/* ----------------------
 Portfolio Popup
 ---------------------- */
 .portfolio-popup {
