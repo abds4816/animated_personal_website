@@ -19,6 +19,13 @@ body {
   }
 }
 
+section {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -34,7 +41,8 @@ img {
 }
 
 .container {
-  width: 80%;
+  min-width: 80%;
+  max-width: 95%;
   margin: 0 auto;
 }
 .row {
@@ -46,6 +54,9 @@ img {
 }
 .hidden {
   display: none;
+}
+.flex-end {
+  justify-content: flex-end;
 }
 .section-padding {
   padding: 6.25rem 0;

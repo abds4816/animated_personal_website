@@ -1,6 +1,9 @@
 @import "variables";
 @import "generals";
+@import "page-loader";
 @import "bg-animation-effect";
+@import "overlay-effect";
+@import "header";
 
 /* ----------------------
 About Section
@@ -404,7 +407,7 @@ Portfolio Popup
     transition: all 0.5s ease;
     transform: translateY(20%);
     .popup-content {
-      max-width: 70%;
+      width: 70%;
       margin: 3.125rem auto 3.75rem;
       .popup-header {
         position: relative;
@@ -462,6 +465,64 @@ Portfolio Popup
         img {
           max-width: 7.5rem;
         }
+      }
+    }
+  }
+}
+
+/* ----------------------
+Media Queries
+---------------------- */
+@media (max-width: 991px) {
+  .bg-animation-effect {
+    div {
+      margin-left: calc((100% - 1.75rem) / 8);
+    }
+    .col-10,
+    .col-9,
+    .col-8 {
+      display: none;
+    }
+  }
+  .portfolio-section {
+    .portfolio-items {
+      .portfolio-item {
+        width: calc(50% - 2rem);
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .bg-animation-effect {
+    div {
+      margin-left: calc((100% - 1.25rem) / 6);
+    }
+    .col-7,
+    .col-6 {
+      display: none;
+    }
+  }
+  .portfolio-section {
+    .portfolio-items {
+      .portfolio-item {
+        width: calc(100% - 2rem);
+      }
+    }
+  }
+}
+@media (max-width: 575px) {
+  .popup-footer {
+    font-size: 1rem;
+  }
+  .popup-content {
+    width: 95%;
+  }
+  .contact-info-item {
+    p {
+      font-size: 1.125rem;
+      span {
+        display: block;
+        margin-bottom: 0.625rem;
       }
     }
   }

@@ -1,0 +1,44 @@
+.page-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $dark-light;
+  color: $white-light;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5625rem;
+  font-weight: 400;
+  transition: all 0.6s ease 0.4s;
+  &.slide-out-right {
+    transform: translateX(100%);
+    .page-loader-inner {
+      opacity: 0;
+    }
+  }
+  &-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+    transition: all 0.6s ease 0.4s;
+    .circle {
+      height: 1.875rem;
+      width: 1.875rem;
+      border: 2px solid $white-light;
+      border-radius: 50%;
+      border-right-color: transparent;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
