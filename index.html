@@ -250,22 +250,22 @@
           <div class="contact-form-inner">
             <div class="contact-form-container">
               <button type="button" class="close-btn toggle-contact-form-btn"></button>
-              <form>
+              <form action="https://formspree.io/f/mgedlokw" method="POST">
                 <div class="row">
                   <div class="input-group">
-                    <input type="text" class="input-control" placeholder="Your Name">
+                    <input type="text" class="input-control" name="First Name" placeholder="Your Name" required>
                   </div>
                   <div class="input-group">
-                    <input type="email" class="input-control" placeholder="Your Email">
+                    <input type="email" class="input-control" name="Email" placeholder="Your Email" required>
                   </div>
                   <div class="input-group">
-                    <input type="text" class="input-control" placeholder="Subject">
+                    <input type="text" class="input-control" name="Subject" placeholder="Subject" required>
                   </div>
                   <div class="input-group">
-                    <textarea class="input-control" placeholder="Message"></textarea>
+                    <textarea class="input-control" name="Message" placeholder="Message" required></textarea>
                   </div>
                   <div class="input-group">
-                    <button type="button" class="btn btn-submit">send</button>
+                    <button type="submit" class="btn btn-submit">send</button>
                   </div>
                 </div>
               </form>

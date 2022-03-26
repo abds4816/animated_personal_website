@@ -45,8 +45,7 @@ img {
 }
 
 .container {
-  min-width: 80%;
-  max-width: 95%;
+  max-width: 73.125rem;
   margin: 0 auto;
 }
 
@@ -1141,7 +1140,7 @@ Portfolio Popup
 }
 
 .portfolio-popup .popup-inner .popup-content {
-  width: 70%;
+  max-width: 53.125rem;
   margin: 3.125rem auto 3.75rem;
 }
 
@@ -1198,11 +1197,12 @@ Portfolio Popup
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+.portfolio-popup .popup-inner .popup-content .popup-footer-left, .portfolio-popup .popup-inner .popup-content .popup-footer-right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .portfolio-popup .popup-inner .popup-content .popup-footer-right {
@@ -1250,11 +1250,8 @@ Media Queries
 }
 
 @media (max-width: 575px) {
-  .popup-footer {
+  .popup-footer h3 {
     font-size: 1rem;
-  }
-  .popup-content {
-    width: 95%;
   }
   .contact-info-item p {
     font-size: 1.125rem;

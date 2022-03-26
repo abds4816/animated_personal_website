@@ -407,7 +407,7 @@ Portfolio Popup
     transition: all 0.5s ease;
     transform: translateY(20%);
     .popup-content {
-      width: 70%;
+      max-width: 53.125rem;
       margin: 3.125rem auto 3.75rem;
       .popup-header {
         position: relative;
@@ -452,8 +452,10 @@ Portfolio Popup
       .popup-footer {
         padding-top: 2.5rem;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        &-left,
+        &-right {
+          flex: 1;
+        }
         &-right {
           text-align: end;
         }
@@ -512,10 +514,9 @@ Media Queries
 }
 @media (max-width: 575px) {
   .popup-footer {
-    font-size: 1rem;
-  }
-  .popup-content {
-    width: 95%;
+    h3 {
+      font-size: 1rem;
+    }
   }
   .contact-info-item {
     p {
